@@ -49,11 +49,20 @@ var employees = [
     2. If the employee's first name is Lorie, change her department to 'HR'.
     3. Return the updated employee array.
 */
-
-//Code Here
-
-
-
+function employeeUpdater() {
+  for (var i = 0; i < employees.length; i++) {
+    var obj = employees[i];
+    for (let key in obj) {
+      if(obj[key] === "Theo") {
+        employees.splice(i, 1)
+      }
+      if(obj[key] === "Lorie") {
+        obj['department'] = 'HR';
+      }
+    }
+  }
+  return employees;
+}
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
@@ -68,7 +77,9 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(arr) {
+  return arr.filter((item,index) => index === arr.indexOf(item))
+}//Code Here
 
 
 
@@ -97,8 +108,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat["catFriends"][0]["activities"][1];
+var fluffy2ndFriend = cat["catFriends"][1].name;
 
 
 
@@ -138,7 +149,12 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  let accidents = myCar["accidents"];
+  for(let i = 0; i < accidents.length; i ++){
+    accidents[i]['atFaultForAccident'] = false;
+  }
+}//Code Here
 
 
 
@@ -157,6 +173,18 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper() {
+    for (let i = 0; i < numsArr.length; i++) {
+      for (let j = 0; j < numsArr[i].length; j++) {
+        let nums = numsArr[i][j];
+        if (nums % 2 === 0) {
+          numsArr[i][j] = "even";
+        } else if (nums % 2 !== 0) {
+          numsArr[i][j] = "odd";
+        }
+      }
+    }
+    return numsArr;
+  }//Code Here
 
 

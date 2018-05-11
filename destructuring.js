@@ -57,15 +57,23 @@ function greeting(obj) {
   Sum up the values and return the total number.
 */
 
+var object = {
+  utah: 1,
+  california:2,
+  texas: 3,
+  arizona: 4
+}
+
 function totalPopulation(obj){
   let {utah, california, texas, arizona} = obj;
-      obj.reduce(function(sum, total){
-      console.log(sum, total);
-      return sum + obj.amount;
+  for (var i = 0; i < obj.length; i++){
+      obj[i].reduce(function(sum, val){
+      console.log(sum, val);
+      return sum + val;
     }, 0)
   }//Code Here
-
-
+}
+  totalPopulation(object);
 
 ////////// PROBLEM 4 //////////
 
